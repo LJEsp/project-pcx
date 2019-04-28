@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "destyle.css";
+import { ThemeProvider } from "styled-components";
+
+import { Button } from "components/elements";
+import { Input } from "components/elements/form";
+import SearchBox from "components/blocks/SearchBox/SearchBox";
+
+import { theme, GlobalStyle } from "styling";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyle />
+        <Button>Button</Button>
+        <Input />
+        <SearchBox />
+      </>
+    </ThemeProvider>
   );
 }
 
