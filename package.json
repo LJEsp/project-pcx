@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "cross-env NODE_PATH=src/ start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "cross-env NODE_PATH=src/ build-storybook -c .storybook -o docs"
   },
   "eslintConfig": {
     "extends": "react-app"
