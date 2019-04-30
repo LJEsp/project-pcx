@@ -6,12 +6,15 @@ import {
   faShoppingCart
 } from "@fortawesome/free-solid-svg-icons";
 
-import { Logo, ButtonCombination } from "components/elements";
+import { Logo, ButtonMixedVertical } from "components/elements";
 import { SearchBox } from "components/blocks";
+import { InnerWidth } from "components/layouts";
 
 const S = {};
 
-S.Header = styled.header`
+S.Header = styled.header``;
+
+S.InnerWidth = styled(InnerWidth)`
   display: grid;
   grid-template-areas: "logo search-box buttons";
   grid-template-columns: auto 1fr auto;
@@ -25,7 +28,6 @@ S.Header = styled.header`
       "search-box search-box";
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
-    /* justify-items: center; */
   }
 
   @media (max-width: ${p => p.theme.breakpoint.tabletLandscape}) {
@@ -47,7 +49,7 @@ S.SearchBox = styled(SearchBox)`
   grid-area: search-box;
 `;
 
-S.ButtonCombinationWrapper = styled.div`
+S.ButtonMixedVerticalWrapper = styled.div`
   grid-area: buttons;
   display: flex;
 
@@ -68,15 +70,17 @@ S.ButtonCombinationWrapper = styled.div`
 const Header = props => {
   return (
     <S.Header>
-      <S.Logo />
+      <S.InnerWidth>
+        <S.Logo />
 
-      <S.SearchBox />
+        <S.SearchBox />
 
-      <S.ButtonCombinationWrapper>
-        <ButtonCombination icon={faUser} label="Account" />
-        <ButtonCombination icon={faHeart} label="Wishlist" />
-        <ButtonCombination icon={faShoppingCart} label="Cart" />
-      </S.ButtonCombinationWrapper>
+        <S.ButtonMixedVerticalWrapper>
+          <ButtonMixedVertical icon={faUser}>Account</ButtonMixedVertical>
+          <ButtonMixedVertical icon={faHeart}>Wishlist</ButtonMixedVertical>
+          <ButtonMixedVertical icon={faShoppingCart}>Cart</ButtonMixedVertical>
+        </S.ButtonMixedVerticalWrapper>
+      </S.InnerWidth>
     </S.Header>
   );
 };

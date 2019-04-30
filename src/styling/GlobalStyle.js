@@ -5,9 +5,11 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
     --border-light: 1px solid ${p => p.theme.color.light};
+    --focus: 0 0 0 var(--size-xxs) ${p => p.theme.color.secondary.light};
 
   ${"" /* CSS variables for sizing (and spacing) */}
     --size-base: ${p => p.theme.size.base};
+    --size-base-fixed: ${p => p.theme.size.base};
     --size-xxs: ${p => p.theme.size.xxs};
     --size-xs: ${p => p.theme.size.xs};
     --size-s: ${p => p.theme.size.s};
@@ -15,8 +17,8 @@ const GlobalStyle = createGlobalStyle`
     --size-l: ${p => p.theme.size.l};
     --size-xl: ${p => p.theme.size.xl};
 
-    --size-base-fixed: ${p => p.theme.size.base};
     --size-button: 2.5rem;
+    --size-button-big: ${p => p.theme.size.xl};
 
     @media (max-width: ${p => p.theme.breakpoint.tabletPortrait}) {
       --size-base: calc(${p => p.theme.size.base} / 1.5);
@@ -27,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
       --size-xl: calc(${p => p.theme.size.xl} / 1.5);
 
       --size-button: 3rem;
+      --size-button-big: 3rem;
     }
   }  
 

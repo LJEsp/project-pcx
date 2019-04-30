@@ -6,31 +6,28 @@ import Button from "./Button";
 
 const S = {};
 
-S.ButtonCombinationHorizontal = styled(Button)`
+S.ButtonMixedHorizontal = styled(Button)`
   display: flex;
   padding: var(--size-s) var(--size-m);
-
-  & > .icon {
-    margin-right: var(--size-s);
-  }
+  padding-left: var(--size-s);
 `;
 
 S.Icon = styled.span`
   width: var(--size-l);
 `;
 
-const ButtonCombinationHorizontal = props => {
+const ButtonMixedHorizontal = props => {
   const { icon, iconSize } = props;
 
   return (
-    <S.ButtonCombinationHorizontal {...props}>
+    <S.ButtonMixedHorizontal {...props}>
       <S.Icon>
         <FontAwesomeIcon icon={icon} size={iconSize} />
       </S.Icon>
 
       {props.children}
-    </S.ButtonCombinationHorizontal>
+    </S.ButtonMixedHorizontal>
   );
 };
 
-export default ButtonCombinationHorizontal;
+export default ButtonMixedHorizontal;

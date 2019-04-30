@@ -17,7 +17,7 @@ import {
 import {
   Typography,
   ButtonIcon,
-  ButtonCombinationHorizontal
+  ButtonMixedHorizontal
 } from "components/elements";
 
 import { InnerWidth } from "components/layouts";
@@ -77,7 +77,7 @@ S.LinksWrapper = styled.div`
 
 const TopBar = props => {
   return (
-    <S.TopBar>
+    <S.TopBar {...props}>
       <S.InnerWidth>
         <Typography variant="base" configs={["uppercase", "bold"]}>
           For all your digital needs
@@ -87,58 +87,58 @@ const TopBar = props => {
           <ButtonIcon
             icon={faFacebook}
             iconSize="lg"
-            configs={["dark", "secondary"]}
+            variant="secondary"
           />
           <ButtonIcon
             icon={faTwitter}
             iconSize="lg"
-            configs={["dark", "secondary"]}
+            variant="secondary"
           />
           <ButtonIcon
             icon={faInstagram}
             iconSize="lg"
-            configs={["dark", "secondary"]}
+            variant="secondary"
           />
           <ButtonIcon
             icon={faYoutube}
             iconSize="lg"
-            configs={["dark", "secondary"]}
+            variant="secondary"
           />
           <ButtonIcon
             icon={faEnvelope}
             iconSize="lg"
-            configs={["dark", "secondary"]}
+            variant="secondary"
           />
         </S.SocialWrapper>
 
         <S.LinksWrapper>
-          <ButtonCombinationHorizontal
+          <ButtonMixedHorizontal
             icon={faUsers}
-            configs={["dark", "secondary"]}
+            variant="secondary"
           >
             We are hiring
-          </ButtonCombinationHorizontal>
+          </ButtonMixedHorizontal>
 
-          <ButtonCombinationHorizontal
+          <ButtonMixedHorizontal
             icon={faQuestion}
-            configs={["dark", "secondary"]}
+            variant="secondary"
           >
             FAQs
-          </ButtonCombinationHorizontal>
+          </ButtonMixedHorizontal>
 
-          <ButtonCombinationHorizontal
+          <ButtonMixedHorizontal
             icon={faMapMarkerAlt}
-            configs={["dark", "secondary"]}
+            variant="secondary"
           >
             Branches
-          </ButtonCombinationHorizontal>
+          </ButtonMixedHorizontal>
 
-          <ButtonCombinationHorizontal
+          <ButtonMixedHorizontal
             icon={faList}
-            configs={["dark", "secondary"]}
+            variant="secondary"
           >
             Download Price Lists
-          </ButtonCombinationHorizontal>
+          </ButtonMixedHorizontal>
         </S.LinksWrapper>
       </S.InnerWidth>
     </S.TopBar>

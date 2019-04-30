@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "./Button";
 
 const StyledButtonIcon = styled(Button)`
+  padding: 0;
   min-width: var(--size-button);
   width: var(--size-button);
 `;
