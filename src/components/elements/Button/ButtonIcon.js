@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Button from "./Button";
 
@@ -9,7 +10,13 @@ const StyledButtonIcon = styled(Button)`
 `;
 
 const ButtonIcon = props => {
-  return <StyledButtonIcon {...props}>{props.children}</StyledButtonIcon>;
+  const { icon, iconSize } = props;
+
+  return (
+    <StyledButtonIcon {...props}>
+      <FontAwesomeIcon icon={icon} size={iconSize} />
+    </StyledButtonIcon>
+  );
 };
 
 export default ButtonIcon;

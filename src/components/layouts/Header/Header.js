@@ -53,10 +53,9 @@ S.ButtonCombinationWrapper = styled.div`
 
   @media (max-width: ${p => p.theme.breakpoint.desktopM}) {
     width: 100%;
-    border-bottom: 2px solid ${p => p.theme.color.grey.medium};
   }
 
-  * {
+  & > * {
     width: ${p => p.theme.incrementFixed(3)};
 
     @media (max-width: ${p => p.theme.breakpoint.desktopM}) {

@@ -22,8 +22,12 @@ const theme = {
     lineHeight: 1.5
   },
   color: {
-    primary: {},
-    secondary: {},
+    primary: {
+      main: "#D22630"
+    },
+    secondary: {
+      main: "#003DA5"
+    },
     light: "#FAFAFA",
     lightFixed: "#FAFAFA",
     dark: "#212121",
@@ -31,7 +35,7 @@ const theme = {
     black: "#000000",
     grey: {
       light: "#F5F5F5",
-      medium: "#9E9E9E",
+      medium: "#BDBDBD",
       dark: "#424242"
     },
     palette: {

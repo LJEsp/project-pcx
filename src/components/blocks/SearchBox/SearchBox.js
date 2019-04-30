@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import { Input, Select } from "components/elements/form";
@@ -55,9 +54,7 @@ const SearchBox = props => {
 
       <S.Select options={categoryOptions} placeholder="Select Category" />
 
-      <S.ButtonIcon>
-        <FontAwesomeIcon icon={faSearch} />
-      </S.ButtonIcon>
+      <S.ButtonIcon icon={faSearch} />
     </S.SearchBox>
   );
 };

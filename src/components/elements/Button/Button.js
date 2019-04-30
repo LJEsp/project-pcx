@@ -1,6 +1,16 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import "destyle.css";
+
+const configs = css`
+  ${p =>
+    p.configs.includes("dark") &&
+    css`
+      &:hover {
+        background-color: ${p => p.theme.color.grey.dark};
+      }
+    `}
+`;
 
 const StyledButton = styled.button`
   height: var(--size-button);
@@ -8,6 +18,8 @@ const StyledButton = styled.button`
   &:hover {
     background-color: ${p => p.theme.color.grey.light};
   }
+
+  ${p => p.configs && configs};
 `;
 
 const Button = props => {

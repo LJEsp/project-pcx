@@ -13,6 +13,7 @@ const StyledSelect = styled.div`
     padding: 0 var(--size-s);
     width: 100%;
     height: 100%;
+    font-size: ${p => p.theme.font.scale.small};
   }
 
   & > .select-caret {
