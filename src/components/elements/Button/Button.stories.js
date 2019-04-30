@@ -61,6 +61,7 @@ stories.add("ButtonMixedHorizontal", () => (
     size={radios("Size", { Big: "big", Default: "" })}
     outline={boolean("Outline", false)}
     icon={faFlag}
+    iconEnd={faFlag}
   >
     {text("Label", "Button")}
   </ButtonMixedHorizontal>

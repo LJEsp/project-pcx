@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import cropLineHeight from "styling/utils/cropLineHeight";
 
 const configs = css`
   ${p =>

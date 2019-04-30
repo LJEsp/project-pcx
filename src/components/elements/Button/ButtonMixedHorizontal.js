@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Button from "./Button";
@@ -8,7 +8,15 @@ const S = {};
 
 S.ButtonMixedHorizontal = styled(Button)`
   display: flex;
-  /* padding-left: var(--size-s); */
+  align-items: center;
+`;
+
+S.Label = styled.span`
+  ${p =>
+    p.iconEnd &&
+    css`
+      margin-right: var(--size-base);
+    `}
 `;
 
 S.Icon = styled.span`
@@ -17,7 +25,7 @@ S.Icon = styled.span`
 `;
 
 const ButtonMixedHorizontal = props => {
-  const { icon, iconSize } = props;
+  const { icon, iconSize, iconEnd } = props;
 
   return (
     <S.ButtonMixedHorizontal {...props}>
@@ -25,7 +33,9 @@ const ButtonMixedHorizontal = props => {
         <FontAwesomeIcon icon={icon} size={iconSize} />
       </S.Icon>
 
-      <span>{props.children}</span>
+      <S.Label {...props}>{props.children}</S.Label>
+
+      {iconEnd && <FontAwesomeIcon icon={iconEnd} size={iconSize} />}
     </S.ButtonMixedHorizontal>
   );
 };
