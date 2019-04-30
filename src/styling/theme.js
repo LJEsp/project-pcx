@@ -23,10 +23,14 @@ const theme = {
   },
   color: {
     primary: {
-      main: "#D22630"
+      main: "#D22630",
+      light: "#DE2831",
+      dark: "#911A20"
     },
     secondary: {
-      main: "#003DA5"
+      main: "#003DA5",
+      light: "#0059F2",
+      dark: "#002566"
     },
     light: "#FAFAFA",
     lightFixed: "#FAFAFA",

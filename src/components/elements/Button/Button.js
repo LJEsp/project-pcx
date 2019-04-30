@@ -10,6 +10,15 @@ const configs = css`
         background-color: ${p => p.theme.color.grey.dark};
       }
     `}
+
+  ${p =>
+    p.configs.includes("dark") &&
+    p.configs.includes("secondary") &&
+    css`
+      &:hover {
+        background-color: ${p => p.theme.color.secondary.dark};
+      }
+    `}
 `;
 
 const StyledButton = styled.button`

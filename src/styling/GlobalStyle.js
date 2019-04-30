@@ -3,8 +3,10 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
 
-  ${"" /* CSS variables for sizing (and spacing) */}
   :root {
+    --border-light: 1px solid ${p => p.theme.color.light};
+
+  ${"" /* CSS variables for sizing (and spacing) */}
     --size-base: ${p => p.theme.size.base};
     --size-xxs: ${p => p.theme.size.xxs};
     --size-xs: ${p => p.theme.size.xs};

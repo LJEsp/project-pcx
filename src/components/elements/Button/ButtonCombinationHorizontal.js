@@ -1,18 +1,36 @@
-import React from 'react';
-import styled from "styled-componetns";
+import React from "react";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import Button from "./Button";
 
 const S = {};
 
-S.ButtonCombinationHorizontal = styled.button`
-  
-`
+S.ButtonCombinationHorizontal = styled(Button)`
+  display: flex;
+  padding: var(--size-s) var(--size-m);
 
-const ButtonCombinationHorizontal = () => {
+  & > .icon {
+    margin-right: var(--size-s);
+  }
+`;
+
+S.Icon = styled.span`
+  width: var(--size-l);
+`;
+
+const ButtonCombinationHorizontal = props => {
+  const { icon, iconSize } = props;
+
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <S.ButtonCombinationHorizontal {...props}>
+      <S.Icon>
+        <FontAwesomeIcon icon={icon} size={iconSize} />
+      </S.Icon>
 
-export default ButtonCombinationHorizontal
+      {props.children}
+    </S.ButtonCombinationHorizontal>
+  );
+};
+
+export default ButtonCombinationHorizontal;

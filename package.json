@@ -1,5 +1,5 @@
 {
-  "name": "sandbox-ui",
+  "name": "project-pcx",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,6 +39,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-knobs": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
     "@storybook/addon-viewport": "^5.0.11",
     "@storybook/addons": "^5.0.11",
