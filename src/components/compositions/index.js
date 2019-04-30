@@ -1,2 +1,1 @@
-export { default as Header } from "./Header/Header";
-export { default as TopBar } from "./TopBar/TopBar";
+export { default as SearchBox } from "../compositions/SearchBox/SearchBox";

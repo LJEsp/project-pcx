@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import SearchBox from "./SearchBox";
 
-storiesOf("Components|Blocks/SearchBox", module)
+storiesOf("Components|Compositions/SearchBox", module)
   .add("default", () => <SearchBox />)
   .add("with category options", () => (
     <SearchBox

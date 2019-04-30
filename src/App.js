@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 
 import { Button } from "components/elements";
 import { Input } from "components/elements/form";
-import SearchBox from "components/blocks/SearchBox/SearchBox";
+import { SearchBox } from "components/compositions";
 
 import { theme, GlobalStyle } from "styling";
 

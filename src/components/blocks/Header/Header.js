@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { Logo, ButtonMixedVertical } from "components/elements";
-import { SearchBox } from "components/blocks";
+import { SearchBox } from "components/compositions";
 import { InnerWidth } from "components/layouts";
 
 const S = {};
