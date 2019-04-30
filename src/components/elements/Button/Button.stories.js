@@ -1,6 +1,6 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { text, radios } from "@storybook/addon-knobs";
+import { text, radios, boolean } from "@storybook/addon-knobs";
 import { faFlag } from "@fortawesome/free-solid-svg-icons";
 
 import Button from "./Button";
@@ -18,6 +18,7 @@ stories.add("default", () => (
       Default: ""
     })}
     size={radios("Size", { Big: "big", Default: "" })}
+    outline={boolean("Outline", false)}
   >
     {text("Label", "Button")}
   </Button>
@@ -31,6 +32,7 @@ stories.add("ButtonIcon", () => (
       Default: ""
     })}
     size={radios("Size", { Big: "big", Default: "" })}
+    outline={boolean("Outline", false)}
     icon={faFlag}
   />
 ));
@@ -42,6 +44,7 @@ stories.add("ButtonMixedVertical", () => (
       Secondary: "secondary",
       Default: ""
     })}
+    outline={boolean("Outline", false)}
     icon={faFlag}
   >
     {text("Label", "Button")}
@@ -55,29 +58,10 @@ stories.add("ButtonMixedHorizontal", () => (
       Secondary: "secondary",
       Default: ""
     })}
-    icon={faFlag}
     size={radios("Size", { Big: "big", Default: "" })}
+    outline={boolean("Outline", false)}
+    icon={faFlag}
   >
     {text("Label", "Button")}
   </ButtonMixedHorizontal>
 ));
-
-// storiesOf("Components|Elements/Button", module).add("default", () => (
-//   <Button variant={text("Variant", "")}>Button - default</Button>
-// ));
-
-// storiesOf("Components|Elements/Button/variant", module).add("primary", () => (
-//   <Button variant="primary">Button variant="primary"</Button>
-// ));
-
-// storiesOf("Components|Elements/Button/variant", module).add("secondary", () => (
-//   <Button variant="secondary">Button variant="secondary"</Button>
-// ));
-
-// storiesOf("Components|Elements/Button/configs", module).add("dark", () => (
-//   <Button configs={["dark"]}>Button</Button>
-// ));
-
-// storiesOf("Components|Elements/Button/size", module).add("big", () => (
-//   <Button size="big">Button size="big"</Button>
-// ));

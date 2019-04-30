@@ -4,15 +4,10 @@ import "destyle.css";
 
 const variant = css`
   ${p =>
-    p.variant &&
-    css`
-      padding: var(--size-s) var(--size-m);
-    `};
-
-  ${p =>
     p.variant === "primary" &&
     css`
-      background-color: ${p => p.theme.color.primary.main};
+      --this-color: ${p => p.theme.color.primary.main};
+      background-color: var(--this-color);
       color: ${p => p.theme.color.light};
 
       &:hover {
@@ -23,7 +18,8 @@ const variant = css`
   ${p =>
     p.variant === "secondary" &&
     css`
-      background-color: ${p => p.theme.color.secondary.main};
+      --this-color: ${p => p.theme.color.secondary.main};
+      background-color: var(--this-color);
       color: ${p => p.theme.color.light};
 
       &:hover {
@@ -37,10 +33,30 @@ const size = css`
     p.size === "big" &&
     css`
       height: var(--size-button-big);
+      padding: var(--size-s) var(--size-l);
+      font-weight: 600;
     `};
 `;
 
+const configs = css`
+  ${p =>
+    p.outline &&
+    css`
+      border: var(--size-xxs) solid var(--this-color);
+      background-color: unset;
+      color: var(--this-color);
+      font-weight: 600;
+
+      &:hover {
+        background-color: ${p => p.theme.color.grey.light};
+      }
+    `}
+`;
+
 const StyledButton = styled.button`
+  --this-color: ${p => p.theme.color.dark};
+
+  padding: var(--size-s) var(--size-m);
   height: var(--size-button);
 
   &:hover {
@@ -54,6 +70,7 @@ const StyledButton = styled.button`
 
   ${variant};
   ${size};
+  ${configs};
 `;
 
 const Button = props => {
