@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import { animated } from "react-spring";
 
 import ComplexMenuItem from "./ComplexMenuItem";
 
 const S = {};
 
-S.ComplexMenuList = styled.div`
+S.ComplexMenuList = animated(styled.div`
   width: 100%;
-`;
+`);
 
 const ComplexMenuList = props => {
   const { menu } = props;

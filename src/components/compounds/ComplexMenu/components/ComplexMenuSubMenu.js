@@ -9,7 +9,8 @@ S.ComplexMenuSubMenu = styled.div`
   background-color: ${p => p.theme.color.grey.light};
   border-left: 2px solid ${p => p.theme.color.grey.lightHover};
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(5, 1fr);
 `;
 
 const ComplexMenuSubMenu = props => {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
+import { useTransition, config } from "react-spring";
 import { faBars, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 import { ButtonMixedHorizontal } from "components/elements";
@@ -12,12 +13,17 @@ S.ComplexMenu = styled.div`
   position: relative;
 `;
 
+S.Wrapper = styled.div``;
+
 S.ComplexMenuList = styled(ComplexMenuList)`
   position: absolute;
   top: var(--size-xl);
 `;
 
 S.ButtonMixedHorizontal = styled(ButtonMixedHorizontal)`
+  position: relative;
+  z-index: 10;
+
   ${p =>
     p.isHovered &&
     css`
@@ -28,6 +34,12 @@ S.ButtonMixedHorizontal = styled(ButtonMixedHorizontal)`
 const ComplexMenu = props => {
   const { menu } = props;
   const [isHovered, setIsHovered] = useState(false);
+
+  const transitions = useTransition(isHovered, null, {
+    from: { position: "absolute", opacity: 0, transform: "translateY(-2rem)" },
+    enter: { opacity: 1, transform: "translateY(0)" },
+    leave: { opacity: 0, transform: "translateY(-2rem)" }
+  });
 
   const handleEnter = () => {
     setIsHovered(true);
@@ -51,7 +63,10 @@ const ComplexMenu = props => {
         Browse Categories
       </S.ButtonMixedHorizontal>
 
-      {isHovered && <S.ComplexMenuList menu={menu} />}
+      {transitions.map(
+        ({ item, key, props }) =>
+          item && <S.ComplexMenuList menu={menu} key={key} style={props} />
+      )}
     </S.ComplexMenu>
   );
 };

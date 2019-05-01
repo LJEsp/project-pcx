@@ -13,8 +13,6 @@ S.ComplexMenuSubMenu = styled(ComplexMenuSubMenu)`
   position: absolute;
   left: 100%;
   top: 0;
-  min-height: 100%;
-  max-height: 150%;
 `;
 
 S.ButtonMixedHorizontal = styled(ButtonMixedHorizontal)`
