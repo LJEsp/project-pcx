@@ -19,6 +19,7 @@ stories.add("default", () => (
     })}
     size={radios("Size", { Big: "big", Default: "" })}
     outline={boolean("Outline", false)}
+    full={boolean("Full", false)}
   >
     {text("Label", "Button")}
   </Button>
@@ -45,6 +46,7 @@ stories.add("ButtonMixedVertical", () => (
       Default: ""
     })}
     outline={boolean("Outline", false)}
+    full={boolean("Full", false)}
     icon={faFlag}
   >
     {text("Label", "Button")}
@@ -60,6 +62,7 @@ stories.add("ButtonMixedHorizontal", () => (
     })}
     size={radios("Size", { Big: "big", Default: "" })}
     outline={boolean("Outline", false)}
+    full={boolean("Full", false)}
     icon={faFlag}
     iconEnd={faFlag}
   >

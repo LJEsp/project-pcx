@@ -5,7 +5,9 @@ const GlobalStyle = createGlobalStyle`
 
   :root {
     --border-light: 1px solid ${p => p.theme.color.light};
-    --focus: 0 0 0 var(--size-xxs) ${p => p.theme.color.secondary.light};
+    --border-medium: 1px solid ${p => p.theme.color.grey.medium};
+    --border-dark: 1px solid ${p => p.theme.color.grey.dark};
+    --focus: var(--size-xs) solid ${p => p.theme.color.secondary.light};
 
   ${"" /* CSS variables for sizing (and spacing) */}
     --size-base: ${p => p.theme.size.base};

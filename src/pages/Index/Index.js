@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Header, TopBar } from "components/blocks";
+import { Header, TopBar, NavBar } from "components/blocks";
 
 const S = {};
 
@@ -11,11 +11,16 @@ S.TopBar = styled(TopBar)`
   margin-bottom: var(--size-base);
 `;
 
+S.Header = styled(Header)`
+  margin-bottom: var(--size-base);
+`;
+
 const Index = () => {
   return (
     <S.Index>
       <S.TopBar />
-      <Header />
+      <S.Header />
+      <NavBar />
     </S.Index>
   );
 };

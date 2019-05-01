@@ -39,6 +39,7 @@ const theme = {
     black: "#000000",
     grey: {
       light: "#F5F5F5",
+      lightHover: "#E0E0E0",
       medium: "#BDBDBD",
       dark: "#424242"
     },

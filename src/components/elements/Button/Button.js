@@ -7,24 +7,30 @@ const variant = css`
     p.variant === "primary" &&
     css`
       --this-color: ${p => p.theme.color.primary.main};
+      --this-color-hover: ${p => p.theme.color.primary.dark};
+
       background-color: var(--this-color);
       color: ${p => p.theme.color.light};
-
-      &:hover {
-        background-color: ${p => p.theme.color.primary.dark};
-      }
     `};
 
   ${p =>
     p.variant === "secondary" &&
     css`
       --this-color: ${p => p.theme.color.secondary.main};
+      --this-color-hover: ${p => p.theme.color.secondary.dark};
+
       background-color: var(--this-color);
       color: ${p => p.theme.color.light};
+    `};
 
-      &:hover {
-        background-color: ${p => p.theme.color.secondary.dark};
-      }
+  ${p =>
+    p.variant === "light" &&
+    css`
+      --this-color: ${p => p.theme.color.grey.light};
+      --this-color-hover: ${p => p.theme.color.grey.lightHover};
+
+      background-color: var(--this-color);
+      color: ${p => p.theme.color.dark};
     `};
 `;
 
@@ -48,23 +54,42 @@ const configs = css`
       font-weight: 600;
 
       &:hover {
-        background-color: ${p => p.theme.color.grey.light};
+        background-color: var(--this-color-hover);
       }
+    `}
+
+  ${p =>
+    p.full &&
+    css`
+      width: 100%;
+    `}
+
+  ${p =>
+    p.left &&
+    css`
+      text-align: left;
+    `}
+
+  ${p =>
+    p.nowrap &&
+    css`
+      white-space: nowrap;
     `}
 `;
 
 const StyledButton = styled.button`
   --this-color: ${p => p.theme.color.dark};
+  --this-color-hover: ${p => p.theme.color.grey.light};
 
   padding: var(--size-s) var(--size-m);
   height: var(--size-button);
 
   &:hover {
-    background-color: ${p => p.theme.color.grey.light};
+    background-color: var(--this-color-hover);
   }
 
   &:focus {
-    box-shadow: var(--focus);
+    outline: var(--focus);
     z-index: 1;
   }
 

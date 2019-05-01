@@ -69,7 +69,7 @@ S.ButtonMixedVerticalWrapper = styled.div`
 
 const Header = props => {
   return (
-    <S.Header>
+    <S.Header {...props}>
       <S.InnerWidth>
         <S.Logo />
 

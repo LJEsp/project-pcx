@@ -19,9 +19,19 @@ S.Label = styled.span`
     `}
 `;
 
-S.Icon = styled.span`
-  /* width: var(--size-l); */
-  padding-right: var(--size-s);
+S.IconStart = styled.span`
+  margin-right: var(--size-s);
+
+  ${p =>
+    p.vertical &&
+    css`
+      width: var(--size-l);
+      margin-right: var(--size-m);
+    `}
+`;
+
+S.IconEnd = styled(FontAwesomeIcon)`
+  margin-left: auto;
 `;
 
 const ButtonMixedHorizontal = props => {
@@ -29,13 +39,13 @@ const ButtonMixedHorizontal = props => {
 
   return (
     <S.ButtonMixedHorizontal {...props}>
-      <S.Icon>
+      <S.IconStart {...props}>
         <FontAwesomeIcon icon={icon} size={iconSize} />
-      </S.Icon>
+      </S.IconStart>
 
       <S.Label {...props}>{props.children}</S.Label>
 
-      {iconEnd && <FontAwesomeIcon icon={iconEnd} size={iconSize} />}
+      {iconEnd && <S.IconEnd icon={iconEnd} size={iconSize} />}
     </S.ButtonMixedHorizontal>
   );
 };
