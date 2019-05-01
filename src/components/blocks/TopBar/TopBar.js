@@ -79,64 +79,32 @@ const TopBar = props => {
   return (
     <S.TopBar {...props}>
       <S.InnerWidth>
-        <Typography variant="base" configs={["uppercase", "bold"]}>
+        <Typography variant="base" uppercase bold>
           For all your digital needs
         </Typography>
 
         <S.SocialWrapper>
-          <ButtonIcon
-            icon={faFacebook}
-            iconSize="lg"
-            variant="secondary"
-          />
-          <ButtonIcon
-            icon={faTwitter}
-            iconSize="lg"
-            variant="secondary"
-          />
-          <ButtonIcon
-            icon={faInstagram}
-            iconSize="lg"
-            variant="secondary"
-          />
-          <ButtonIcon
-            icon={faYoutube}
-            iconSize="lg"
-            variant="secondary"
-          />
-          <ButtonIcon
-            icon={faEnvelope}
-            iconSize="lg"
-            variant="secondary"
-          />
+          <ButtonIcon icon={faFacebook} iconSize="lg" variant="secondary" />
+          <ButtonIcon icon={faTwitter} iconSize="lg" variant="secondary" />
+          <ButtonIcon icon={faInstagram} iconSize="lg" variant="secondary" />
+          <ButtonIcon icon={faYoutube} iconSize="lg" variant="secondary" />
+          <ButtonIcon icon={faEnvelope} iconSize="lg" variant="secondary" />
         </S.SocialWrapper>
 
         <S.LinksWrapper>
-          <ButtonMixedHorizontal
-            icon={faUsers}
-            variant="secondary"
-          >
+          <ButtonMixedHorizontal icon={faUsers} variant="secondary">
             We are hiring
           </ButtonMixedHorizontal>
 
-          <ButtonMixedHorizontal
-            icon={faQuestion}
-            variant="secondary"
-          >
+          <ButtonMixedHorizontal icon={faQuestion} variant="secondary">
             FAQs
           </ButtonMixedHorizontal>
 
-          <ButtonMixedHorizontal
-            icon={faMapMarkerAlt}
-            variant="secondary"
-          >
+          <ButtonMixedHorizontal icon={faMapMarkerAlt} variant="secondary">
             Branches
           </ButtonMixedHorizontal>
 
-          <ButtonMixedHorizontal
-            icon={faList}
-            variant="secondary"
-          >
+          <ButtonMixedHorizontal icon={faList} variant="secondary">
             Download Price Lists
           </ButtonMixedHorizontal>
         </S.LinksWrapper>

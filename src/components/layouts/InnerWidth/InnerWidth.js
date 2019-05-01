@@ -5,8 +5,8 @@ const InnerWidth = styled.div`
   margin: 0 auto;
 
   @media (max-width: ${p => p.theme.breakpoint.desktopL}) {
-    width: unset
-    padding: 0 var(--size-base);
+    width: unset;
+    margin: 0 var(--size-base);
   }
 `;
 

@@ -4,16 +4,18 @@ import styled from "styled-components";
 const S = {};
 
 S.WideMenuContainer = styled.div`
-  background-color: ${p => p.theme.color.grey.light};
+  background-color: ${p => p.theme.color.grey.lightHover};
 `;
 
 const WideMenuContainer = props => {
-  const { isHovered, bind } = props;
+  const { isHovered, bind, children } = props;
 
   return (
-    <S.WideMenuContainer {...bind} {...props}>
-      {isHovered && "test"}
-    </S.WideMenuContainer>
+    isHovered && (
+      <S.WideMenuContainer {...bind} {...props}>
+        {children}
+      </S.WideMenuContainer>
+    )
   );
 };
 

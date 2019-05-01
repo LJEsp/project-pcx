@@ -10,8 +10,8 @@ const WideMenu = () => {
 
   return (
     <>
-      <WideMenuButton {...myWideMenu} />
-      <WideMenuContainer {...myWideMenu} />
+      <WideMenuButton variant="primary" {...myWideMenu}>WideMenuButton</WideMenuButton>
+      <WideMenuContainer {...myWideMenu}>WideMenuContainer</WideMenuContainer>
     </>
   );
 };

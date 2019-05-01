@@ -1,19 +1,5 @@
 import styled, { css } from "styled-components";
 
-const configs = css`
-  ${p =>
-    p.configs.includes("bold") &&
-    css`
-      font-weight: 600;
-    `}
-
-  ${p =>
-    p.configs.includes("uppercase") &&
-    css`
-      text-transform: uppercase;
-    `}
-`;
-
 const variants = css`
   ${p =>
     (p.variant === "body" &&
@@ -44,10 +30,24 @@ const variants = css`
       `)}
 `;
 
+const configs = css`
+  ${p =>
+    p.bold &&
+    css`
+      font-weight: 600;
+    `}
+
+  ${p =>
+    p.uppercase &&
+    css`
+      text-transform: uppercase;
+    `}
+`;
+
 const Typography = styled.span`
   ${variants};
 
-  ${p => p.configs && configs};
+  ${configs};
 `;
 
 export default Typography;

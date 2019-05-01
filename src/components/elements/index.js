@@ -4,3 +4,5 @@ export { default as ButtonMixedVertical } from "./Button/ButtonMixedVertical";
 export { default as ButtonMixedHorizontal } from "./Button/ButtonMixedHorizontal";
 export { default as Logo } from "./Logo/Logo";
 export { default as Typography } from "./Typography/Typography";
+export { default as Card } from "./Card/Card";
+export { default as Photo } from "./Photo/Photo";
