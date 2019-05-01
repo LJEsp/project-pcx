@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import { useTransition, config } from "react-spring";
 import { faBars, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 import { ButtonMixedHorizontal } from "components/elements";
@@ -35,12 +34,6 @@ const ComplexMenu = props => {
   const { menu } = props;
   const [isHovered, setIsHovered] = useState(false);
 
-  const transitions = useTransition(isHovered, null, {
-    from: { position: "absolute", opacity: 0, transform: "translateY(-2rem)" },
-    enter: { opacity: 1, transform: "translateY(0)" },
-    leave: { opacity: 0, transform: "translateY(-2rem)" }
-  });
-
   const handleEnter = () => {
     setIsHovered(true);
   };
@@ -63,10 +56,7 @@ const ComplexMenu = props => {
         Browse Categories
       </S.ButtonMixedHorizontal>
 
-      {transitions.map(
-        ({ item, key, props }) =>
-          item && <S.ComplexMenuList menu={menu} key={key} style={props} />
-      )}
+      {isHovered && <S.ComplexMenuList menu={menu} />}
     </S.ComplexMenu>
   );
 };

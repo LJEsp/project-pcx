@@ -19,7 +19,7 @@ const ComplexMenuSubMenu = props => {
   return (
     <S.ComplexMenuSubMenu {...props}>
       {menu.map(item => (
-        <Button variant="light" size="big" full nowrap left>
+        <Button key={item.label} variant="light" size="big" full nowrap left>
           {item.label}
         </Button>
       ))}
