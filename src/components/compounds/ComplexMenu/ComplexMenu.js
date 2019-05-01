@@ -31,7 +31,7 @@ S.ButtonMixedHorizontal = styled(ButtonMixedHorizontal)`
 `;
 
 const ComplexMenu = props => {
-  const { menu } = props;
+  const { label, menu } = props;
   const [isHovered, setIsHovered] = useState(false);
 
   const handleEnter = () => {
@@ -53,7 +53,7 @@ const ComplexMenu = props => {
         vertical
         isHovered={isHovered}
       >
-        Browse Categories
+        {label}
       </S.ButtonMixedHorizontal>
 
       {isHovered && <S.ComplexMenuList menu={menu} />}
@@ -62,6 +62,7 @@ const ComplexMenu = props => {
 };
 
 ComplexMenu.defaultProps = {
+  label: "Label",
   menu: [
     {
       label: "Menu 1",

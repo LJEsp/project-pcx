@@ -54,7 +54,8 @@ const configs = css`
       font-weight: 600;
 
       &:hover {
-        background-color: var(--this-color-hover);
+        background-color: var(--this-color);
+        color: ${p => p.theme.color.light};
       }
     `}
 
@@ -77,6 +78,14 @@ const configs = css`
     `}
 `;
 
+const effects = css`
+  ${p =>
+    p.isHovered &&
+    css`
+      background-color: var(--this-color-hover);
+    `}
+`;
+
 const StyledButton = styled.button`
   --this-color: ${p => p.theme.color.dark};
   --this-color-hover: ${p => p.theme.color.grey.light};
@@ -96,6 +105,7 @@ const StyledButton = styled.button`
   ${variant};
   ${size};
   ${configs};
+  ${effects};
 `;
 
 const Button = props => {

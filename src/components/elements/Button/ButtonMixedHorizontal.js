@@ -39,9 +39,11 @@ const ButtonMixedHorizontal = props => {
 
   return (
     <S.ButtonMixedHorizontal {...props}>
-      <S.IconStart {...props}>
-        <FontAwesomeIcon icon={icon} size={iconSize} />
-      </S.IconStart>
+      {icon && (
+        <S.IconStart {...props}>
+          <FontAwesomeIcon icon={icon} size={iconSize} />
+        </S.IconStart>
+      )}
 
       <S.Label {...props}>{props.children}</S.Label>
 
