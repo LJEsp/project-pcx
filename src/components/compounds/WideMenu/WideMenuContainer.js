@@ -4,7 +4,11 @@ import styled from "styled-components";
 const S = {};
 
 S.WideMenuContainer = styled.div`
-  background-color: ${p => p.theme.color.grey.lightHover};
+  background-image: linear-gradient(
+    to bottom,
+    ${p => p.theme.color.grey.lightHover},
+    rgba(0, 0, 0, 0)
+  );
 `;
 
 const WideMenuContainer = props => {

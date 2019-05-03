@@ -12,7 +12,6 @@ S.ButtonMixVertical = styled(Button)`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  cursor: pointer;
 `;
 
 S.Icon = styled.span`
