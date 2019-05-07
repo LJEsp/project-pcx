@@ -26,20 +26,28 @@ S.Date = styled.div`
 `;
 
 S.Photo = styled(Photo)`
-  flex: 2;
+  flex: 3;
 `;
 
 S.ContentWrapper = styled.div`
   padding: var(--size-base);
+  padding-top: var(--size-l);
   text-align: center;
   display: flex;
   flex-flow: column nowrap;
   flex: 1;
+  position: relative;
 `;
 
 S.Caption = styled(Typography)`
-  margin-bottom: var(--size-s);
-  color: ${p => p.theme.color.secondary.main};
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: var(--size-s) var(--size-m);
+  color: ${p => p.theme.color.light};
+  background-color: ${p => p.theme.color.secondary.main};
+  white-space: nowrap;
 `;
 
 const NewsCard = props => {
@@ -63,7 +71,7 @@ const NewsCard = props => {
           {caption}
         </S.Caption>
 
-        <Typography variant="display-3">{label}</Typography>
+        <Typography variant="body">{label}</Typography>
       </S.ContentWrapper>
     </S.NewsCard>
   );

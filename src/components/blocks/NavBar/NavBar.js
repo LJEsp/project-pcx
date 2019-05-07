@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { faTags } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
@@ -8,13 +8,14 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import { ButtonMixedHorizontal } from "components/elements";
-import { ComplexMenu, NewsCard } from "components/compounds";
+import { ComplexMenu } from "components/compounds";
 import {
   useWideMenu,
   WideMenuButton,
   WideMenuContainer
 } from "components/compounds/WideMenu";
 import { InnerWidth } from "components/layouts";
+import NewsWideMenuContainer from "./components/NewsWideMenuContainer";
 import categoriesMenu from "./categoriesMenu";
 
 const S = {};
@@ -35,23 +36,22 @@ S.RightWrapper = styled.div`
   display: flex;
 `;
 
-S.WideMenuContainer = styled(WideMenuContainer)`
+const wideMenu = css`
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
 
   height: 50vh;
-  display: flex;
-  padding: var(--size-base);
+  border-bottom: var(--size-xxs) solid ${p => p.theme.color.secondary.main};
+`;
 
-  & > *:not(:last-child) {
-    margin-right: var(--size-base);
-  }
+S.WideMenuContainer = styled(WideMenuContainer)`
+  ${wideMenu};
+`;
 
-  & > * {
-    flex: 1;
-  }
+S.NewsWideMenuContainer = styled(NewsWideMenuContainer)`
+  ${wideMenu}
 `;
 
 const NavBar = props => {
@@ -101,24 +101,7 @@ const NavBar = props => {
           </ButtonMixedHorizontal>
         </S.RightWrapper>
 
-        <S.WideMenuContainer {...newsAndPromosWideMenu}>
-          <NewsCard
-            caption="Promotion"
-            label="INNO3D GTX 1660 Ti + Intel Core i5-9400F Bundle Promo"
-            photoSrc="https://i2.wp.com/pcx.com.ph/wp-content/uploads/2019/04/3-Promo-Page-Header-1357-x-768-3-2.jpg?resize=1024%2C580&ssl=1"
-          />
-          <NewsCard
-            caption="Promotion"
-            label="Lenovo Double the Fun Tablet Bundle"
-            photoSrc="https://i2.wp.com/pcx.com.ph/wp-content/uploads/2019/04/3-Promo-Page-Header-1357-x-768-4-1.jpg?resize=1024%2C580&ssl=1"
-          />
-          <NewsCard
-            caption="Promotion"
-            label="PCX LAPTOP AND PRINTER BUNDLE PROMO"
-            photoSrc="https://i2.wp.com/pcx.com.ph/wp-content/uploads/2019/02/3-Promo-Page-Header-1357-x-768-1.jpg?resize=1024%2C580&ssl=1"
-          />
-          <NewsCard />
-        </S.WideMenuContainer>
+        <S.NewsWideMenuContainer {...newsAndPromosWideMenu} />
 
         <S.WideMenuContainer {...microsoftWideMenu} />
       </S.InnerWidth>
@@ -127,5 +110,3 @@ const NavBar = props => {
 };
 
 export default NavBar;
-
-
