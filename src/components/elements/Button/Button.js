@@ -54,7 +54,7 @@ const configs = css`
       font-weight: 600;
 
       &:hover {
-        background-color: var(--this-color);
+        background-color: var(--this-color-hover);
         color: ${p => p.theme.color.light};
       }
     `}
@@ -75,6 +75,12 @@ const configs = css`
     p.nowrap &&
     css`
       white-space: nowrap;
+    `}
+
+  ${p =>
+    p.dark &&
+    css`
+      --this-color-hover: ${p => p.theme.color.grey.dark};
     `}
 `;
 
@@ -103,8 +109,8 @@ const StyledButton = styled.button`
   }
 
   ${variant};
-  ${size};
   ${configs};
+  ${size};
   ${effects};
 `;
 

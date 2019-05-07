@@ -28,7 +28,6 @@ S.Select = styled(Select)`
 S.ButtonIcon = styled(ButtonIcon)`
   border: var(--size-xxs) solid ${p => p.theme.color.grey.medium};
   border-left: 0;
-  color: ${p => p.theme.color.grey.dark};
 
   @media (max-width: ${p => p.theme.breakpoint.tabletPortrait}) {
     border-top: 0;
@@ -54,7 +53,7 @@ const SearchBox = props => {
 
       <S.Select options={categoryOptions} placeholder="Select Category" />
 
-      <S.ButtonIcon icon={faSearch} />
+      <S.ButtonIcon icon={faSearch} dark/>
     </S.SearchBox>
   );
 };

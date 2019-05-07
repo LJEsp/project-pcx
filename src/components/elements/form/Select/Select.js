@@ -21,7 +21,6 @@ const StyledSelect = styled.div`
     top: 50%;
     right: var(--size-base);
     transform: translateY(-50%);
-    color: ${p => p.theme.color.grey.dark};
     pointer-events: none;
   }
 `;

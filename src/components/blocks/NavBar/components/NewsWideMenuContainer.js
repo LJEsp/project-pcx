@@ -49,7 +49,9 @@ const NewsWideMenuContainer = props => {
         <NewsCard />
       </div>
 
-      <Button variant="secondary" size="big" outline>See All News and Promos</Button>
+      <Button variant="secondary" size="big" outline>
+        See All News and Promos
+      </Button>
     </S.NewsWideMenuContainer>
   );
 };

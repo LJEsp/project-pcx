@@ -20,7 +20,9 @@ import categoriesMenu from "./categoriesMenu";
 
 const S = {};
 
-S.NavBar = styled.div``;
+S.NavBar = styled.div`
+  color: ${p => p.theme.color.light};
+`;
 
 S.InnerWidth = styled(InnerWidth)`
   display: flex;
@@ -43,7 +45,7 @@ const wideMenu = css`
   right: 0;
 
   height: 50vh;
-  border-bottom: var(--size-xxs) solid ${p => p.theme.color.secondary.main};
+  background-color: ${p => p.theme.color.grey.lightHover};
 `;
 
 S.WideMenuContainer = styled(WideMenuContainer)`
@@ -82,21 +84,11 @@ const NavBar = props => {
         </S.LeftWrapper>
 
         <S.RightWrapper>
-          <ButtonMixedHorizontal
-            variant="light"
-            icon={faFacebook}
-            iconSize="lg"
-            size="big"
-          >
+          <ButtonMixedHorizontal icon={faFacebook} iconSize="lg" size="big" dark>
             PCXGC
           </ButtonMixedHorizontal>
 
-          <ButtonMixedHorizontal
-            variant="light"
-            icon={faYoutube}
-            iconSize="lg"
-            size="big"
-          >
+          <ButtonMixedHorizontal icon={faYoutube} iconSize="lg" size="big" dark>
             PCXTV
           </ButtonMixedHorizontal>
         </S.RightWrapper>

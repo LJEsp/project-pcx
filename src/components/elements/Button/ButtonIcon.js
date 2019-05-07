@@ -8,6 +8,7 @@ const StyledButtonIcon = styled(Button)`
   padding: 0;
   min-width: var(--size-button);
   width: var(--size-button);
+  height: var(--size-button);
 `;
 
 const ButtonIcon = props => {

@@ -12,7 +12,9 @@ import { InnerWidth } from "components/layouts";
 
 const S = {};
 
-S.Header = styled.header``;
+S.Header = styled.header`
+  color: ${p => p.theme.color.light};
+`;
 
 S.InnerWidth = styled(InnerWidth)`
   display: grid;
@@ -76,9 +78,9 @@ const Header = props => {
         <S.SearchBox />
 
         <S.ButtonMixedVerticalWrapper>
-          <ButtonMixedVertical icon={faUser}>Account</ButtonMixedVertical>
-          <ButtonMixedVertical icon={faHeart}>Wishlist</ButtonMixedVertical>
-          <ButtonMixedVertical icon={faShoppingCart}>Cart</ButtonMixedVertical>
+          <ButtonMixedVertical icon={faUser} dark>Account</ButtonMixedVertical>
+          <ButtonMixedVertical icon={faHeart} dark>Wishlist</ButtonMixedVertical>
+          <ButtonMixedVertical icon={faShoppingCart} dark>Cart</ButtonMixedVertical>
         </S.ButtonMixedVerticalWrapper>
       </S.InnerWidth>
     </S.Header>

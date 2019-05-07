@@ -17,7 +17,7 @@ const theme = {
       display4: "1.1875em", // 24px
       display3: "1.5em", // 24px
       display2: "2em", // 32px
-      display1: "3em" // 48px
+      display1: "3.875em" // 62px
     },
     lineHeight: 1.5
   },
