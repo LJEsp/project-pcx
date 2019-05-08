@@ -16,6 +16,10 @@ S.Index = styled.div`
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
+
+    @media (max-width: ${p => p.theme.breakpoint.tabletPortrait}) {
+      height: auto;
+    }
   }
 `;
 
@@ -44,6 +48,10 @@ S.SlideShowBackground = styled(SlideShowBackground)`
 S.SlideShowContent = styled(SlideShowContent)`
   color: ${p => p.theme.color.light};
   flex-grow: 1;
+
+  @media (max-width: ${p => p.theme.breakpoint.desktopM}) {
+    margin-top: var(--size-l);
+  }
 `;
 
 const Index = () => {

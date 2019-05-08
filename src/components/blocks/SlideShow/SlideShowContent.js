@@ -28,6 +28,10 @@ S.SlideShowContent = styled.div`
     *:not(:last-child) {
       margin-right: var(--size-m);
     }
+
+    @media (max-width: ${p => p.theme.breakpoint.tabletPortrait}) {
+      display: none;
+    }
   }
 `;
 
@@ -35,9 +39,15 @@ S.InnerWidth = styled(InnerWidth)`
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   .slideShowContent-left {
     width: 38%;
+    padding-left: var(--size-xl);
+
+    @media (max-width: ${p => p.theme.breakpoint.desktopM}) {
+      width: 80vw;
+    }
   }
 
   .slideShowContent-header {
@@ -51,18 +61,28 @@ S.InnerWidth = styled(InnerWidth)`
   .slideShowContent-previous {
     margin-right: var(--size-base);
     align-self: center;
+    z-index: 2;
+
+    @media (max-width: ${p => p.theme.breakpoint.desktopM}) {
+      margin-top: var(--size-xl);
+    }
   }
 
   .slideShowContent-next {
     margin-left: auto;
     align-self: center;
+    z-index: 2;
+
+    @media (max-width: ${p => p.theme.breakpoint.desktopM}) {
+      margin-left: 0;
+      margin-top: var(--size-xl);
+    }
   }
 `;
 
 S.NavButton = styled.button`
   width: var(--size-button);
   height: var(--size-button);
-  
 
   background-color: ${p => p.theme.color.white};
 
@@ -121,39 +141,37 @@ const SlideShowContent = props => {
           onClick={handlePreviousSlide}
         />
 
-        <div>
-          {transitions.map(
-            ({ item, key, props }) =>
-              item && (
-                <animated.div
-                  className="slideShowContent-left"
-                  key={key}
-                  style={props}
+        {transitions.map(
+          ({ item, key, props }) =>
+            item && (
+              <animated.div
+                className="slideShowContent-left"
+                key={key}
+                style={props}
+              >
+                <Typography
+                  className="slideShowContent-header"
+                  variant="display-1"
+                  as="h1"
+                  bold
                 >
-                  <Typography
-                    className="slideShowContent-header"
-                    variant="display-1"
-                    as="h1"
-                    bold
-                  >
-                    {item.heading}
-                  </Typography>
+                  {item.heading}
+                </Typography>
 
-                  <Typography
-                    variant="body"
-                    className="slideShowContent-description"
-                    as="p"
-                  >
-                    {item.description}
-                  </Typography>
+                <Typography
+                  variant="body"
+                  className="slideShowContent-description"
+                  as="p"
+                >
+                  {item.description}
+                </Typography>
 
-                  <Button variant="primary" size="big" outline>
-                    {item.cta}
-                  </Button>
-                </animated.div>
-              )
-          )}
-        </div>
+                <Button variant="primary" size="big" outline>
+                  {item.cta}
+                </Button>
+              </animated.div>
+            )
+        )}
 
         <ButtonIcon
           className="slideShowContent-next"

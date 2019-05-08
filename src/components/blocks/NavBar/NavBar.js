@@ -22,6 +22,10 @@ const S = {};
 
 S.NavBar = styled.div`
   color: ${p => p.theme.color.light};
+
+  @media (max-width: ${p => p.theme.breakpoint.desktopM}) {
+    display: none;
+  }
 `;
 
 S.InnerWidth = styled(InnerWidth)`

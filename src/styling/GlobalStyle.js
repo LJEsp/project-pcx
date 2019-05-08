@@ -39,17 +39,17 @@ const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
     font-size: 16px;
 
-    @media (max-width: ${p => p.theme.breakpoint.tabletPortrait}) {
+    /* @media (max-width: ${p => p.theme.breakpoint.tabletPortrait}) {
       font-size: 15px;
-    }
+    } */
 
     @media (min-width: ${p => p.theme.breakpoint.tabletPortrait}) {
       font-size: 16px;
     }
 
-    @media (min-width: ${p => p.theme.breakpoint.desktopL}) {
+    /* @media (min-width: ${p => p.theme.breakpoint.desktopL}) {
       font-size: 15px;
-    }
+    } */
 
     @media (min-width: ${p => p.theme.breakpoint.desktopL}) {
       font-size: 16px;

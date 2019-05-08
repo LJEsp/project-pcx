@@ -6,6 +6,10 @@ const variants = css`
       css`
         font-size: ${p => p.theme.font.scale.body};
         line-height: ${p => p.theme.font.lineHeight};
+
+        @media (max-width: ${p => p.theme.breakpoint.tabletPortrait}) {
+          font-size: ${p => p.theme.font.scale.base};
+        }
       `) ||
     (p.variant === "base" &&
       css`
@@ -15,6 +19,10 @@ const variants = css`
     (p.variant === "display-1" &&
       css`
         font-size: ${p => p.theme.font.scale.display1};
+
+        @media (max-width: ${p => p.theme.breakpoint.tabletPortrait}) {
+          font-size: ${p => p.theme.font.scale.display2};
+        }
       `) ||
     (p.variant === "display-2" &&
       css`
