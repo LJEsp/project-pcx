@@ -62,9 +62,13 @@ S.InnerWidth = styled(InnerWidth)`
 S.NavButton = styled.button`
   width: var(--size-button);
   height: var(--size-button);
-  /* border-radius: 1000rem; */
+  
 
   background-color: ${p => p.theme.color.white};
+
+  &:focus {
+    outline: var(--focus);
+  }
 
   &:hover {
     background-color: ${p => p.theme.color.grey.lightHover};
@@ -163,6 +167,7 @@ const SlideShowContent = props => {
       <div className="slideShowContent-navButtons">
         {slideShowData.map((slideShowItem, index) => (
           <S.NavButton
+            key={index}
             isSelected={index === currentSlideIndex}
             onClick={() => handleNavigate(index)}
           />

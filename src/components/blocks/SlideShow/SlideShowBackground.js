@@ -13,8 +13,8 @@ S.SlideShowBackground = styled.div`
     top: 0;
     background-image: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.6),
-      transparent 38%
+      rgba(0, 0, 0, 0.8),
+      transparent 62%
     );
     height: 100%;
     width: 100%;
