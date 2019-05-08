@@ -38,12 +38,52 @@ const GlobalStyle = createGlobalStyle`
   html {
     scroll-behavior: smooth;
     font-size: 16px;
+
+    @media (max-width: ${p => p.theme.breakpoint.tabletPortrait}) {
+      font-size: 15px;
+    }
+
+    @media (min-width: ${p => p.theme.breakpoint.tabletPortrait}) {
+      font-size: 16px;
+    }
+
+    @media (min-width: ${p => p.theme.breakpoint.desktopL}) {
+      font-size: 15px;
+    }
+
+    @media (min-width: ${p => p.theme.breakpoint.desktopL}) {
+      font-size: 16px;
+    }
+
+    @media (min-width: ${p => p.theme.breakpoint.desktopXXL}) {
+      font-size: 24px;
+    }
   }
   
   body {
     font-family: ${p => p.theme.font.sansSerif};
     font-size: 16px;
     color: ${p => p.theme.color.dark};
+
+    @media (max-width: ${p => p.theme.breakpoint.tabletPortrait}) {
+      font-size: 15px;
+    }
+
+    @media (min-width: ${p => p.theme.breakpoint.tabletPortrait}) {
+      font-size: 16px;
+    }
+
+    @media (min-width: ${p => p.theme.breakpoint.desktopM}) {
+      font-size: 15px;
+    }
+
+    @media (min-width: ${p => p.theme.breakpoint.desktopL}) {
+      font-size: 16px;
+    }
+
+    @media (min-width: ${p => p.theme.breakpoint.desktopXXL}) {
+      font-size: 24px;
+    }
   }
 
   #root {
