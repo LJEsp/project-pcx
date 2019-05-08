@@ -9,7 +9,7 @@ const slideShowData = [
     dark: true
   },
   {
-    heading: "Content 2",
+    heading: "iPhone 8",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id nam corrupti hic tempora obcaecati facilis velit ipsa nemo, et quod reprehenderit labore facere delectus in tempore ex omnis fugit ducimus!",
     cta: "Buy Now",

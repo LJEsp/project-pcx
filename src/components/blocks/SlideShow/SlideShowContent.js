@@ -62,6 +62,7 @@ S.InnerWidth = styled(InnerWidth)`
 S.NavButton = styled.button`
   width: var(--size-button);
   height: var(--size-button);
+  /* border-radius: 1000rem; */
 
   background-color: ${p => p.theme.color.white};
 

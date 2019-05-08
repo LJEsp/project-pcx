@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const useSideShow = slideShowData => {
   const [currentSlideIndex, setSlideIndex] = useState(0);
   const [currentSlideShow, setSlideShow] = useState([slideShowData[0]]);
   const [isForward, setIsForward] = useState(true);
+  const [isSlideShowRotating, setIsSlideShowRotating] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (isSlideShowRotating) {
+        handleNextSlide({ isTimerActive: true });
+      }
+    }, 8000);
+
+    return () => clearTimeout(timer);
+  });
 
   function handleNavigate(index) {
     setSlideIndex(index);
@@ -14,9 +25,11 @@ const useSideShow = slideShowData => {
         (slideItem, slideItemIndex) => slideItemIndex === index
       )
     );
+
+    setIsSlideShowRotating(false);
   }
 
-  function handleNextSlide() {
+  function handleNextSlide({ isTimerActive }) {
     if (currentSlideIndex === slideShowData.length - 1) {
       setSlideIndex(0);
       setSlideShow([slideShowData[0]]);
@@ -25,6 +38,10 @@ const useSideShow = slideShowData => {
       setSlideShow([slideShowData[currentSlideIndex + 1]]);
     }
     setIsForward(true);
+
+    if (!isTimerActive) {
+      setIsSlideShowRotating(false);
+    }
   }
 
   function handlePreviousSlide() {
@@ -36,6 +53,8 @@ const useSideShow = slideShowData => {
       setSlideShow([slideShowData[currentSlideIndex - 1]]);
     }
     setIsForward(false);
+
+    setIsSlideShowRotating(false);
   }
 
   return {
